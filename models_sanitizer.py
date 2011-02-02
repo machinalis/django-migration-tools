@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
 
+__author__ = "Matias Herranz (matiasherranz@gmail.com)"
+__version__ = "0.1"
+
+
 import os
 import re
 
 
 # Base directory path from where to walk template directories.
+# Set the paths according to your project.
 CURRENT_PATH = os.path.realpath(".")
-BASE_PATH = CURRENT_PATH + '/trunk/expo/'
+BASE_PATH = CURRENT_PATH + '/trunk/'
 print BASE_PATH
 
 def sanitizer():
@@ -28,10 +33,10 @@ def make_replacements(root, name):
     data = open(filepath).read()
 
     o = open(filepath, "w")
+    # uncomment here to change one or another:
+    # this should be a parameter of the function. A TODO :-)
 #    o.write(re.sub("maxlength", "max_length", data))
     o.write(re.sub("FloatField", "DecimalField", data))
-#    o.write(re.sub("max_length", "maxlength", data))
-#    o.write(re.sub("DecimalField", "FloatField", data))
     o.close()
 
 

@@ -1,13 +1,18 @@
 # -*- coding: utf-8 -*-
 
+__author__ = "Matias Herranz (matiasherranz@gmail.com)"
+__version__ = "0.1"
+
+
 import os
 
 LINE_TO_ADD_TO_FORMS = '{% csrf_token %}\n'
 
 
 # Base directory path from where to walk template directories.
+# Set the paths according to your project.
 CURRENT_PATH = os.path.realpath(".")
-BASE_PATH = CURRENT_PATH + '/trunk/expo/'
+BASE_PATH = CURRENT_PATH + '/trunk/'
 print BASE_PATH
 
 def csrf_form_adder():
